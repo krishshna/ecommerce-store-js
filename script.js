@@ -14,24 +14,26 @@ fetch("https://fakestoreapi.com/products")
 
 function displayProducts(products){
 
-let container = document.getElementById("products");
+    let container = document.getElementById("products");
 
-products.forEach(product => {
+    container.innerHTML = "";
 
-let div = document.createElement("div");
+    products.forEach(product => {
 
-div.classList.add("product");
+        let div = document.createElement("div");
 
-div.innerHTML = `
-<img src="${product.image}">
-<h3>${product.title}</h3>
-<p>$${product.price}</p>
-<button onclick="addToCart(${product.id})">Add to Cart</button>
-`;
+        div.classList.add("product");
 
-container.appendChild(div);
+        div.innerHTML = `
+        <img src="${product.image}">
+        <h3>${product.title}</h3>
+        <p>$${product.price}</p>
+        <button onclick="addToCart(${product.id})">Add to Cart</button>
+        `;
 
-});
+        container.appendChild(div);
+
+    });
 
 }
 
@@ -46,5 +48,30 @@ function addToCart(productId){
     document.getElementById("cartCount").innerText = cart.length;
 
     console.log(product.title);
+    
+}
+
+function searchProducts() {
+
+    let searchText = document.getElementById("searchInput").value.toLowerCase();
+    
+    let filteredProducts = allProducts.filter(product =>
+        product.title.toLowerCase().includes(searchText)
+    );
+    
+    displayProducts(filteredProducts);
+    
+}
+
+function filterCategory(category){
+
+    if(category === "all"){
+    displayProducts(allProducts);
+    return;
+    }
+    
+    let filtered = allProducts.filter(product => product.category === category);
+    
+    displayProducts(filtered);
     
 }

@@ -11,7 +11,17 @@
 <h1>My E-Commerce Store</h1>
 
 <div id="cart">
-🛒 Cart: <span id="cartCount">0</span>
+<a href="cart.html">🛒 Cart: <span id="cartCount">0</span></a>
+</div>
+
+<input type="text" id="searchInput" placeholder="Search products..." onkeyup="searchProducts()">
+
+<div id="categories">
+<button onclick="filterCategory('all')">All</button>
+<button onclick="filterCategory('electronics')">Electronics</button>
+<button onclick="filterCategory('jewelery')">Jewelry</button>
+<button onclick="filterCategory('men\'s clothing')">Men</button>
+<button onclick="filterCategory('women\'s clothing')">Women</button>
 </div>
 
 <div id="products"></div>
