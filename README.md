@@ -16,3 +16,18 @@
 
 ## GitHub Repo
 [View Code](https://github.com/krishshna/ecommerce-store-js)
+
+## 📦 Installation
+1. Clone the repository:  
+   ```bash
+   git clone https://github.com/krishshna/task-management-app.git
+2. Open index.html in your browser to run the app locally.
+
+## 💻 Tech Stack
+- Frontend: HTML, CSS, JavaScript
+- Storage: LocalStorage for task persistence
+
+## 🔗 Live Demo
+- Check the current version here: https://krishshna.github.io/task-management-app
+
+⚠️ The project is actively being improved with daily updates.
